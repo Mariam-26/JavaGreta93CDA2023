@@ -1,0 +1,29 @@
+Appli de démo à tester : http://dev.cefisi.com:8090/~developpeur/demofw
+Un bon login : haddock@moulinsart.be/capitaine
+
+*******************************************************************************
+Une fonctionnalité peut avoir différents comportements selon les cas. Ainsi, si j'ajoute un produit au panier sur une boutique en ligne, 1) ajouter un produit qui existe et qui n'est pas déjà dans le panier, 2) ajouter un produit qui est déjà dans le panier 3) ajouter un produit qui n'existe pas 4) ajouter un produit sans préciser lequel.
+Chaque cas doit être testé : nous appelons cela des cas de test. Chacun est enregistré dans selenium.
+
+****************************************************************************
+Sur Comptoir, nous avons besoin de savoir s'il est possible de remplir tous les verres. Nous introduisons ainsi  
+public boolean peutRemplirTous()
+`. Pour répondre à cette question, nous avons aussi besoin du nombre de verres à thé, et de celui à bière, d'où l'ajout de 
+public int getNbVerresAThe()
+ et 
+public int getNbVerresABiere()
+ qu'il faut aussi programmer.
+Le constructeur sera 
+public Comptoir(Recipient bacThe, Recipient bacBiere)
+
+********************************************************************************
+Récapitulation sur les concepts de base de l'héritage :
+Salarie s; // Type déclaré (sa « casquette »)
+// Polymorphisme
+s = new Commercial(1000, 2000); // Type effectif (son « corps »)
+// Typage statique
+double d = s.getSalaire(); // ok car getSalaire() est disponible dans la casquette
+// d = s.getCommission() est interdit car pas dans la casquette, même si présente dans le corps
+// Liaison dynamique
+d == 3000; // c'est la version du corps qui est exécutée
+ 
